@@ -13,6 +13,16 @@ const adminRoutes = require('./routes/adminRoutes');
 // Initialize Express app
 const app = express();
 
+// Root route
+app.get('/', (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: 'EduNexus API is running',
+        version: '1.0.0',
+        documentation: 'https://github.com/jayaveerR/mini_lms#api-documentation'
+    });
+});
+
 // Middleware
 app.use(cors({
     origin: [
