@@ -1,0 +1,87 @@
+### Authentication Endpoints
+
+# Health Check
+GET http://localhost:5000/api/health
+
+###
+
+# Signup - Student
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@student.com",
+  "password": "Test@123",
+  "role": "student"
+}
+
+###
+
+# Signup - Instructor
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "email": "jane@instructor.com",
+  "password": "Test@123",
+  "role": "instructor"
+}
+
+###
+
+# Login - Student
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@student.com",
+  "password": "Test@123"
+}
+
+###
+
+# Login - Instructor
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "jane@instructor.com",
+  "password": "Test@123"
+}
+
+###
+
+# Login - Admin
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@edunexus.com",
+  "password": "Admin@123"
+}
+
+###
+
+# Get Profile (Replace YOUR_TOKEN_HERE with actual token)
+GET http://localhost:5000/api/auth/profile
+Authorization: Bearer YOUR_TOKEN_HERE
+
+###
+
+# Update Profile
+PUT http://localhost:5000/api/auth/profile
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "name": "John Updated",
+  "profileImage": "https://example.com/avatar.jpg"
+}
+
+###
+
+# Verify Token
+GET http://localhost:5000/api/auth/verify-token
+Authorization: Bearer YOUR_TOKEN_HERE
